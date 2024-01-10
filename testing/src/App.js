@@ -1,13 +1,14 @@
-import {useState} from 'react'   // use state
+import React,{ useState } from "react"; // use state
+import Profile from "./Profile";
+
 //function component and class component
-import logo from './logo.svg';
-import './App.css';
-import CompoOne from "./FirstComponent";
-import FirstClassComponent from "./FirstClassComponent";
-import Btn from "./Btn"
-import NewProp from "./UsingProps"
-
-
+// import logo from "./logo.svg";
+// import "./App.css";
+// import CompoOne from "./FirstComponent";
+// import FirstClassComponent from "./FirstClassComponent";
+// import Btn from "./Btn";
+// import NewProp from "./UsingProps";
+// import ClassComponentWithProps from "./UsingProps";
 
 /*
 function App() {
@@ -19,22 +20,91 @@ function App() {
 }
 */
 
-
-//export default App;  
+//export default App;
 
 //export default FirstClassComponent;
 
+/*
+
+*/
+
+// using props with a class component
+/*
 function App() {
   return (
-    <div className="App">
-<NewProp name ={"Neha"} email={"Neha@gmail.com"} />
-<NewProp name ={"Puneet"} email={"puneet@gmail.com"} />
-<NewProp name ={"Sangeet"} email={"sangy@gmail.com"} />
-     <Btn />
+    <div>
+
+      <h1>Class Component:</h1>
+      <ClassComponentWithProps name="Neha" email="neha@example.com" />
+      
     </div>
   );
 }
 
-//export default Btn;
 export default App;
+*/
 
+//GET DATA FROM INPUT
+/*
+function App() {
+  const [data, setData] = useState(null);
+  const [print, setPrint] = useState(false);
+  function GetData(val) {
+    setData(val.target.value);
+    setPrint(false);
+  }
+
+  return (
+    <div className="App">
+      {print ? <h1>{data}</h1> : null}
+
+      <input type="text" onChange={GetData} />
+      <button onClick={()=>setPrint(true)}>print data</button>
+    </div>
+  );
+}
+
+export default App;
+*/
+
+//hide show on click
+
+//Handle Form in React
+/*
+const App = () => {
+  const [name, setName] = useState(""); 
+  const [interest, setInterest] = useState(""); 
+  const [tnc, setTnc] = useState(false); 
+
+  function getFormData(e) {
+    e.preventDefault();
+    console.log("Name:", name);
+    console.log("Interest:", interest);
+    console.log("Terms and Conditions Accepted:", tnc);
+  }
+
+  return (
+    <div className="App">
+      <h1>Handle Form in React</h1>
+      <form onSubmit={getFormData}>
+        <input type="text" placeholder="enter name" onChange={(e) => setName(e.target.value)} /> <br />
+        <select onChange={(e) => setInterest(e.target.value)}>
+          <option>Select Options</option>
+          <option>Marvel</option>
+          <option>DC</option>
+        </select><br /><br />
+        <input type="checkbox" onChange={(e) => setTnc(e.target.checked)} /> Accept Terms and <br /><br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+}
+*/
+function App() {
+  return (
+    <div className="App">
+     <Profile />
+    </div>
+  );
+}
+export default Profile;
