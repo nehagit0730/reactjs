@@ -1,14 +1,14 @@
 import React,{ useState } from "react"; // use state
-import Profile from "./Profile";
-
+//import Profile from "./Profile";
 //function component and class component
 // import logo from "./logo.svg";
-// import "./App.css";
+//import "./App.css";
 // import CompoOne from "./FirstComponent";
 // import FirstClassComponent from "./FirstClassComponent";
 // import Btn from "./Btn";
 // import NewProp from "./UsingProps";
 // import ClassComponentWithProps from "./UsingProps";
+ import ComponentDidMount from "./ComponentDidMount";
 
 /*
 function App() {
@@ -69,7 +69,7 @@ export default App;
 
 //hide show on click
 
-//Handle Form in React
+// 
 /*
 const App = () => {
   const [name, setName] = useState(""); 
@@ -100,11 +100,29 @@ const App = () => {
   );
 }
 */
+
+
 function App() {
+  const [data, setData] = useState(true);
+
+  function dalMakni() {
+    console.log("Hello From dala Makni");
+  }
+
   return (
-    <div className="App">
-     <Profile />
+    <div>
+      {data ? (
+        <div>
+          {/* <ComponentDidMount car="audi" emps={{ name: "Puneet", age: "30" }}></ComponentDidMount> */}
+          {/* Uncomment and provide ComponentDidMount code */}
+        </div>
+      ) : (
+        <div>The component was unmounted</div>
+      )}
+
+      <button onClick={() => setData(!data)}>Click me to Toggle Render</button>
     </div>
   );
 }
-export default Profile;
+
+export default App;
